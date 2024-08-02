@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/back_black.png</file>
+        <file>icon/back_white.png</file>
+        <file>icon/close_black.png</file>
+        <file>icon/close_white.png</file>
+        <file>icon/fullscreen_black.png</file>
+        <file>icon/fullscreen_white.png</file>
+        <file>icon/face.png</file>
+        <file>icon/search.png</file>
+        <file>icon/minimize_black.png</file>
+        <file>icon/minimize_white.png</file>
+    </qresource>
+</RCC>
