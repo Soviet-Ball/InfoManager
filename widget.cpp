@@ -2627,6 +2627,22 @@ QStringList Widget::getTypeInfo(QString key)
     }
     return list;
 }
+QStringList Widget::getTypeInfo(QString key,InfoType filter)
+{
+    QStringList list;
+    QString range = filter == Personal ? "personal" : "global";
+    if(project != nullptr)
+    {
+        int i = 0;
+        while(project->contains("Types/type"+QString::number(i)+"/"+key))
+        {
+            if(project->value("Types/type"+QString::number(i)+"/range") == range)
+                list.append(project->value("Types/type"+QString::number(i)+"/"+key).toString());
+            i++;
+        }
+    }
+    return list;
+}
 int Widget::getPeopleCount()
 {
     int ret = 0;
@@ -2694,8 +2710,8 @@ void Widget::showAutoChangeDialog()
 
         if(!targetlist.isEmpty())
         {
-            QStringList names = this->getTypeInfo("name");
-            QStringList types = this->getTypeInfo("type");
+            QStringList names = this->getTypeInfo("name",Personal);
+            QStringList types = this->getTypeInfo("type",Personal);
             if(targetlist.count() == 1)
             {
                 QList<int> indexlist;
