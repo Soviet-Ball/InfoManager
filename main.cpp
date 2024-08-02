@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
     if(settings->value("useSplashScreen").toString() == "true" || !settings->allKeys().contains("useSplashScreen"))
     {
 #ifndef Q_OS_ANDROID
-        int time = 500;
+        int time = 0;
         bool dark = isSystemDarkMode();
         if(settings->allKeys().contains("appTheme"))
         {
@@ -129,3 +129,4 @@ int main(int argc, char *argv[])
     s.finish(&w);
     return a.exec();
 }
+
