@@ -62,6 +62,7 @@ private slots:
     void infoTableClicked(int y,int x);
     void showAutoChangeDialog();
     QStringList getTypeInfo(QString key);
+    QStringList getTypeInfo(QString key,InfoType filter);
     int getPeopleCount();
     ThemeType getApplicationTheme();
     FileDialogType getApplicationFileDialogType();
